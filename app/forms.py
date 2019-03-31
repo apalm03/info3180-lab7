@@ -5,4 +5,8 @@ from flask_wtf.file import FileField, FileAllowed, FileRequired
 
 class UploadForm(FlaskForm):
     description = TextAreaField('Description', validators=[InputRequired(message='Description is required')])
-    photo = FileField('Image', validators=[FileRequired('Please input a file'), FileAllowed(['jpg', 'png'], 'Images only!')])
+    photo = FileField('Photo', validators=[
+    FileRequired(),
+    FileAllowed(['jpg', 'png', 'Images only!'])
+    ])
+    
